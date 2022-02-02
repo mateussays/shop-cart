@@ -27,7 +27,7 @@ export default function Navbar() {
         <LinkStyle>
           <Link href="/cart">
             <div>
-              <AiOutlineShoppingCart size={30} color={'#585858'}/>
+              <AiOutlineShoppingCart size={30} color={'#292929'}/>
               <CartStyle>{cart.length}</CartStyle>  
             </div>
           </Link>

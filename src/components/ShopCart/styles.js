@@ -14,6 +14,7 @@ export const CardWrapper = styled.div`
 export const CardHeader = styled.header`
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 100px;
 `;
 
 export const CardImageContainer = styled.div`
