@@ -6,10 +6,12 @@ export default function CartProvider({children}) {
 
   const [items, setItems] = useState([]);
   const [cart, setCart] = useState([]);
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
     loadData();
-  }, []);
+    totalCart();
+  }, [cart]);
 
   const loadData = async () => {
     const response = await fetch('./productList.json');
@@ -27,11 +29,20 @@ export default function CartProvider({children}) {
     setCart(cartCopy);
   }
 
+  const totalCart = () => {
+    let totalValue = 0;
+    for (let i =0; i < cart.length; i++) {
+      totalValue += cart[i].price;
+    }
+    setTotal(totalValue);
+  }
+
   const context = {
     items,
     addProductToCart,
     removeFromCart,
     cart,
+    total,
   }
 
   return (
