@@ -1,6 +1,7 @@
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 import CartProvider from '../context/CartContext'
 import Navbar from '../src/components/Navbar/Navbar'
+import Head from 'next/head'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -17,6 +18,10 @@ export default function App({ Component, pageProps }) {
   return (
       <CartProvider>
         <GlobalStyle />
+        <Head>
+          <title>Shopping Cart - Sorte Online</title>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        </Head>
         <Navbar />
         <Component {...pageProps} />
       </CartProvider>
